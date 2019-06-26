@@ -1,3 +1,3 @@
-#ORGANIZADOR DE ARQUIVOS
+# ORGANIZADOR DE ARQUIVOS
 
 Contabilidades possuem diversas rotinas repetitivas e que podem tomar muito tempo de seus funcionários. Muitas dessas tarefas são automatizadas, como a geração de folha de pagamento e envio de informações da SEFIP. O próprio programa da SEFIP dá a opção de fazer o envio de informações e geração de documentos de várias empresas de uma só vez, porém o todos os arquivos são gerados em uma só pasta, ficando a cargo do funcionário colocar cada arquivo na pasta do devido cliente. Para facilitar o trabalho no escritório em que trabalho, criei um script que organizar esse documentos. 
