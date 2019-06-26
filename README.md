@@ -15,3 +15,20 @@ empresas = dict(empresas_lista)
 ```
 
 Pronto! Meu script já sabe onde colocar as empresas de cada CNPJ!
+
+Agora temos que ler o nome de cada arquivo e comparar decidir o que fazer com eles. O Python tem um modulo chamado OS que permite o acesso a documentos do sistema operacional. A função os.listdir cria uma lista com o nome de todos os arquivos da pasta que eu informar. Por comodidade, armazenei o caminho da pasta em uma variável para poder reutilizalo outras vezes no código. 
+
+```
+pasta = 'C:\\\\PASTA\\\\ONDE\\\\ESTAO\\\\OS\\\\ARQUIVOS'
+os.chdir(pasta)
+arquivos = os.listdir(pasta) #CRIA UMA LISTA COM CADA ARQUIVO DE PASTA
+for arq in arquivos :
+    for cnpj in empresas :
+        if cnpj in arq :
+            nomeCompleto = pasta + '\\\\' + arq
+            print(f'Achei!!\nArquivo: {arq}\nCaminho do arquivo: {nomeCompleto}\nDestino do arquivo: {empresas[cnpj]}')
+            shutil.copy(nomeCompleto, empresas[cnpj])
+            break
+```
+
+Essa é uma estrutura de laço aninhada. O que ela faz é comparar cada arquivo da minha pasta com os cnpj's que informei lá em cima. Se o script encontrar um cnpj cadastrado, ele copia o arquivo (por meio da função shutil.copy()) na pasta do cliente. Simples assim!
